@@ -5,7 +5,7 @@ def generate(question: str, api_key: str) -> str:
     """调用模型API生成回答."""
     url = 'https://861-pcp.proxy.hz.gpuez.com/v1/chat/completions'
     headers = {
-        'Authorization': f'Bearer {api_key}',
+        # 'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json'
     }
     data = {
@@ -21,7 +21,7 @@ def generate(question: str, api_key: str) -> str:
     return response.json()['choices'][0]['message']['content']
 
 # 示例调用
-api_key = "<你的API Key>"
+api_key = "<你的API Key>"  # 不使用api key
 question = "什么是机器学习？"
 answer = generate(question, api_key)
 print(answer)
